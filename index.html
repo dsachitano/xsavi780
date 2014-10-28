@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>MLB Data Demo</title>
+  <meta name="description" content="Simple example of displaying MLB game data">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+    <!--
+    Since the data url is hardcoded, might as well hardcode
+    the game title.  TODO: update this heading dynamically
+    based on the fetched xml.
+
+    TODO (interactivity): get data on the entire World Series,
+    then allow user to click on each game to drill down to 
+    what this is currently showing.
+    -->
+    <h1>World Series Game 2</h1>
+    
+    <!--
+    Use this div for live games, in progress
+    -->
+    <div class="inProgress">
+        <div>At Bat:
+            <div class="batter"></div>
+        </div>
+        <div>Pitcher:
+            <div class="pitcher"></div>
+        </div>
+    </div>
+    
+    <!--
+    Use this div for completed games that are not in progress
+    -->
+    <div class="completeGame">
+        <div>Winning Pitcher:
+            <div class="winner"></div>
+        </div>
+        <div>Losing Pitcher:
+            <div class="loser"></div>
+        </div>
+    </div>
+    
+    <!--
+    holds the score
+    -->
+    <div class="score"></div>
+    
+    <!--
+    When a pitcher is clicked, show stats in this div
+    -->
+    <div class="stats"></div>
+  </div>
+  <p class="hint">interact: click on pitcher to toggle stats</p>
+  <p>About:</p>
+  <p>This page shows a selection of data from MLB baseball games.  It is currently hardcoded to show results only from Game 2 of the 2014 World Series, but with minor improvements it could easily display data for any MLB game.</p>
+
+  <p>It has two modes.  When a game is in progress, it can be configured to show the current batter and pitcher as the game is in progress, along with the score.  For games that have already finished (like Game 2) it will show the winning and losing pitchers, the score, and if you click on the players it will show a selection of their stats from the game.</p>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
